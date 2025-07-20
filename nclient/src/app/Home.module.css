@@ -1,0 +1,104 @@
+.embla {
+  overflow: hidden;
+  position: relative;
+}
+
+.embla__viewport {
+  overflow: hidden;
+  width: 100%;
+}
+
+.embla__container {
+  display: flex;
+  flex-wrap: nowrap;
+}
+
+.embla__slide {
+  flex: 0 0 auto;
+  min-width: 0;
+}
+
+/* Responsive slide widths for Designer's Choice (4 slides at >750px) */
+@media (min-width: 750px) {
+  .embla__slide {
+    flex: 0 0 25%; /* 4 slides per view */
+  }
+}
+
+@media (max-width: 749px) and (min-width: 600px) {
+  .embla__slide {
+    flex: 0 0 33.33%; /* 3 slides per view */
+  }
+}
+
+@media (max-width: 599px) and (min-width: 400px) {
+  .embla__slide {
+    flex: 0 0 50%; /* 2 slides per view */
+  }
+}
+
+@media (max-width: 399px) {
+  .embla__slide {
+    flex: 0 0 100%; /* 1 slide per view */
+  }
+}
+
+/* Responsive slide widths for Random Category (5 slides at >750px) */
+.embla__container:nth-child(2) .embla__slide {
+  flex: 0 0 20%; /* 5 slides per view for randomCatProducts */
+}
+
+@media (max-width: 749px) and (min-width: 600px) {
+  .embla__container:nth-child(2) .embla__slide {
+    flex: 0 0 25%; /* 4 slides per view */
+  }
+}
+
+@media (max-width: 599px) and (min-width: 400px) {
+  .embla__container:nth-child(2) .embla__slide {
+    flex: 0 0 50%; /* 2 slides per view */
+  }
+}
+
+@media (max-width: 399px) {
+  .embla__container:nth-child(2) .embla__slide {
+    flex: 0 0 100%; /* 1 slide per view */
+  }
+}
+
+/* Navigation buttons */
+.embla__button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  z-index: 10;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.3s ease;
+}
+
+.embla__button:hover {
+  background: rgba(0, 0, 0, 0.8);
+}
+
+.embla__button__prev {
+  left: 10px;
+}
+
+.embla__button__next {
+  right: 10px;
+}
+
+.embla__button svg {
+  width: 24px;
+  height: 24px;
+}
